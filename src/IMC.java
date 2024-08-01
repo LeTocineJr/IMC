@@ -11,7 +11,19 @@ public class IMC {
 
         //Formula de IMC
         double IMC = weight / (Math.pow(height,2));
-        //Imprime resultado
-        JOptionPane.showMessageDialog(null,"Tu IMC es: " + decimalFormat.format(IMC));
+        //Flujo de control para validar Peso
+        if (IMC >= 40){
+            JOptionPane.showMessageDialog(null, "Presentas Obesidad grado 3." + "\n" + "Tu IMC es: " + decimalFormat.format(IMC));
+        } else if (IMC >= 35.5) {
+            JOptionPane.showMessageDialog(null, "Presentas Obesidad grado 2." + "\n" + "Tu IMC es: " + decimalFormat.format(IMC));
+        } else if (IMC >= 30.0) {
+            JOptionPane.showMessageDialog(null, "Presentas Obesidad grado 1." + "\n" + "Tu IMC es: " + decimalFormat.format(IMC));
+        } else if (IMC >= 25.0) {
+            JOptionPane.showMessageDialog(null,"Padeses de Sobrepeso" + "\n" + "Tu IMC es: " + decimalFormat.format(IMC));
+        } else if (IMC >= 18.5) {
+            JOptionPane.showMessageDialog(null, "Tienes un peso adecuado" + "\n" +"Tu IMC es: " + decimalFormat.format(IMC));
+        } else if (IMC < 18.5){
+            JOptionPane.showMessageDialog(null,"Tienes bajo peso" + "\n" + "Tu IMC es: " + decimalFormat.format(IMC));
+        }
     }
 }
